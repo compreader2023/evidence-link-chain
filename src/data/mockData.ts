@@ -13,6 +13,7 @@ export interface Ingredient {
   events: AcademicEvent[];
   keywords: string[];
   consumerQueries: ConsumerQuery[];
+  expertConsensus: string;
 }
 
 export interface Study {
@@ -20,7 +21,7 @@ export interface Study {
   title: string;
   journal: string;
   year: number;
-  type: '临床研究' | '体外实验' | '综述' | '荟萃分析';
+  type: '临床研究' | '体外实验' | '综述' | '荟萃分析' | '视频报告' | '权威报告';
   summary: string;
   purity?: string;
   sampleSize?: number;
@@ -88,6 +89,24 @@ export const ingredients: Ingredient[] = [
         summary: '体外实验证实IDP蛋白可剂量依赖性地增强巨噬细胞吞噬活性，最高浓度组提升率达42%，同时促进IL-10等抗炎因子分泌。',
         sourceUrl: 'https://example.com/study/idp-2',
       },
+      {
+        id: 'idp-s3',
+        title: 'IDP 免疫防御蛋白临床验证专题纪录片',
+        journal: '中国营养学会官方频道',
+        year: 2024,
+        type: '视频报告',
+        summary: '由中国营养学会联合制作的科普纪录片，系统展示IDP从原料提取到临床验证的全过程，邀请多位免疫学专家解读研究数据，时长18分钟。',
+        sourceUrl: 'https://example.com/video/idp-1',
+      },
+      {
+        id: 'idp-s4',
+        title: 'IDP 免疫调节功能循证价值白皮书（2024版）',
+        journal: '中国食品科学技术学会',
+        year: 2024,
+        type: '权威报告',
+        summary: '由中国食品科学技术学会组织编写的权威报告，汇总IDP在免疫调节领域的全部临床证据、安全性数据及法规合规分析，共计86页。',
+        sourceUrl: 'https://example.com/report/idp-1',
+      },
     ],
     patents: [
       { id: 'idp-p1', title: 'IDP免疫防御蛋白的提取与纯化方法', number: 'CN202310012345.6', year: 2023, country: '中国' },
@@ -96,6 +115,7 @@ export const ingredients: Ingredient[] = [
       { id: 'idp-e1', title: '2024中国营养健康产业高峰论坛 · IDP专题报告', organization: '中国营养学会', date: '2024-06-15', type: '学术会议' },
       { id: 'idp-e2', title: '免疫营养创新原料专家圆桌会', organization: '中国食品科学技术学会', date: '2024-03-20', type: '专家论坛' },
     ],
+    expertConsensus: '中国营养学会 · 2024年《免疫营养原料专家共识》推荐原料',
     keywords: ['免疫力', '免疫调节', '免疫球蛋白', 'IgA', 'NK细胞', '巨噬细胞'],
     consumerQueries: [
       { query: '怎么提高免疫力？', matchedEvidence: 'IDP临床试验: IgA提升23.5%', relevanceScore: 95 },
@@ -141,6 +161,24 @@ export const ingredients: Ingredient[] = [
         summary: '纳入15项RCT、共计1,800名受试者的荟萃分析显示，桑叶提取物可显著降低餐后血糖（WMD: -1.52 mmol/L）和HbA1c（WMD: -0.35%）。',
         sourceUrl: 'https://example.com/study/dnj-3',
       },
+      {
+        id: 'dnj-s4',
+        title: 'DNJ 餐后血糖管理科学解读视频',
+        journal: '中国糖尿病防治中心',
+        year: 2024,
+        type: '视频报告',
+        summary: '权威内分泌专家详解DNJ的血糖调节机制，结合真实患者案例和临床数据，深入浅出地阐述桑叶提取物DNJ在餐后血糖管理中的科学原理，时长22分钟。',
+        sourceUrl: 'https://example.com/video/dnj-1',
+      },
+      {
+        id: 'dnj-s5',
+        title: '桑叶提取物DNJ血糖管理功能评价报告',
+        journal: '国家食品安全风险评估中心',
+        year: 2024,
+        type: '权威报告',
+        summary: '国家级权威机构出具的DNJ功能评价报告，涵盖安全性评估、功效验证及推荐用量指导，为行业标准制定提供参考依据，共计62页。',
+        sourceUrl: 'https://example.com/report/dnj-1',
+      },
     ],
     patents: [
       { id: 'dnj-p1', title: '高纯度DNJ的制备工艺及其在功能食品中的应用', number: 'CN202210098765.3', year: 2022, country: '中国' },
@@ -148,6 +186,7 @@ export const ingredients: Ingredient[] = [
     events: [
       { id: 'dnj-e1', title: '植物提取物与代谢健康国际研讨会', organization: '中国植物学会', date: '2024-09-10', type: '行业峰会' },
     ],
+    expertConsensus: '中国糖尿病防治指南 · 2024年推荐植物源α-葡萄糖苷酶抑制剂',
     keywords: ['血糖管理', '餐后血糖', '糖化血红蛋白', 'α-葡萄糖苷酶', '桑叶'],
     consumerQueries: [
       { query: '吃什么能降血糖？', matchedEvidence: 'DNJ临床研究: 餐后血糖降幅1.8 mmol/L', relevanceScore: 92 },
@@ -185,6 +224,24 @@ export const ingredients: Ingredient[] = [
         sampleSize: 180,
         sourceUrl: 'https://example.com/study/dha-2',
       },
+      {
+        id: 'dha-s3',
+        title: 'DHA 与儿童脑发育科学探索纪录片',
+        journal: '央视健康频道',
+        year: 2024,
+        type: '视频报告',
+        summary: '央视健康频道联合制作，跟拍DHA从微藻培养到临床应用的全链条，采访中国科学院脑科学专家团队，揭秘DHA促进神经元突触发育的微观机制，时长25分钟。',
+        sourceUrl: 'https://example.com/video/dha-1',
+      },
+      {
+        id: 'dha-s4',
+        title: 'DHA 儿童智力发育支持循证评价报告',
+        journal: '中华预防医学会',
+        year: 2024,
+        type: '权威报告',
+        summary: '中华预防医学会组织专家委员会编撰的权威评价报告，系统梳理全球DHA与儿童认知发育的证据等级，并给出中国人群推荐摄入量指南，共计94页。',
+        sourceUrl: 'https://example.com/report/dha-1',
+      },
     ],
     patents: [
       { id: 'dha-p1', title: '高纯度微藻DHA的超临界提取技术', number: 'CN202410056789.1', year: 2024, country: '中国' },
@@ -195,6 +252,7 @@ export const ingredients: Ingredient[] = [
       { id: 'dha-e2', title: 'DHA与儿童发育专家共识发布会', organization: '中华预防医学会', date: '2024-07-22', type: '专家论坛' },
       { id: 'dha-e3', title: '新型藻类来源DHA技术创新峰会', organization: '中国藻业协会', date: '2024-05-16', type: '行业峰会' },
     ],
+    expertConsensus: '中华预防医学会 · 2024年《DHA与儿童发育专家共识》核心推荐原料',
     keywords: ['DHA', '脑部发育', '认知发育', '记忆力', '注意力', '微藻油', '孕期营养'],
     consumerQueries: [
       { query: '孩子记性不好补什么？', matchedEvidence: 'DHA儿童记忆力干预研究', relevanceScore: 96 },
